@@ -1,0 +1,226 @@
+ :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #34495e;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #2d3436;
+      --text-color: #2d3436;
+      --text-light: #95a5a6;
+      --bg-color: #f9f9f9;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--light-color);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 1.9rem;
+    }
+
+    #navbar ul {
+      display: flex;
+      list-style: none;
+    }
+
+    #navbar ul li {
+      margin-left: 2rem;
+    }
+
+    .nav-links {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: color 0.1s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-links::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: var(--primary-color);
+      transition: width 0.2s;
+    }
+
+    .nav-links:hover::after {
+      width: 105%;
+    }
+
+    section {
+      padding: 7rem 2rem;
+      margin: 0 auto;
+    }
+
+    .welcome-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      margin-bottom: -5rem;
+    }
+
+    .welcome-section h1 {
+      font-size: 5rem;
+      font-weight: 750;
+      margin-bottom: 1.2rem;
+      color: var(--dark-color);
+    }
+
+    .welcome-section p {
+      font-size: 2rem;
+      color: var(--primary-color);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 2rem;
+      color: var(--dark-color);
+      position: relative;
+    }
+
+    .projects-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 600px;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary-color);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-title {
+      display: block;
+      text-decoration: none;
+      color: var(--text-color);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-title:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-title img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .project-title p {
+      text-align: center;
+      padding: 10px 0;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    #contact h2 {
+      text-align: center;
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    #contact p {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    .social-medias {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin-top: 2rem;
+    }
+
+    .social-medias a {
+      color: var(--text-color);
+      font-size: 1.8rem;
+      text-decoration: none;
+      background: var(--light-color);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+    }
+
+    .social-medias a:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1f2b36;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      .welcome-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .welcome-section p {
+        font-size: 1.2rem;
+      }
+      
+      #navbar ul {
+        justify-content: center;
+      }
+      
+      #navbar ul li {
+        margin: 0 1rem;
+      }
+    }

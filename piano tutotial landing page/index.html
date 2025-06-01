@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <img id="header-img" src="https://img.freepik.com/free-vector/top-view-classical-black-grand-piano-with-open-keyboard-white-background-isolated-vector-illustration_1284-71535.jpg?uid=R202055620&ga=GA1.1.341573254.1748395801&semt=ais_hybrid&w=500" alt="Piano Mastery Logo">
+            <span><h1>Master the Piano From Home</h1></span>
+        </div>
+        <nav id="nav-bar">
+            <?php
+  echo "hello from php";
+
+?>
+            <ul>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="get-started">
+        <p>Professional lessons for beginners to advanced players</p>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input name="email" id="email" type="email" placeholder="Enter your email address" required>
+            <input id="submit" type="submit" value="Get Started" class="btn">
+        </form>
+    </section>
+
+    <div class="container">
+        <section id="features">
+        <div class="feature">
+              <div>
+                <h2>Expert Instruction</h2>
+                <p>Learn from certified piano teachers with years of performance and teaching experience.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                 <div>
+                    <h2>Comprehensive Curriculum</h2>
+                    <p>From basic scales to advanced concert pieces, we cover all styles and techniques.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                 <div>
+                    <h2>HD Video Lessons</h2>
+                    <p>High-quality multi-angle videos with slow-motion breakdowns of difficult passages.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+             <iframe width="560" height="315" id="video" src="https://www.youtube.com/embed/YzX8T7wWYHM?si=JcHrE5YGDw91lCys&controls=0&showinfo=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section id="pricing">
+            <div class="product" id="beginner">
+                <div class="level">Beginner Package</div>
+                <h2>$19/month</h2>
+                <ol>
+                  <li>Basic piano fundamentals</li>
+                  <li>Simple songs and scales</li>
+                  <li>Weekly lesson updates</li>
+                  <li>Email support</li>
+               </ol>
+               <button class="btn">Select</button>
+            </div>
+
+            <div class="product" id="intermediate">
+                <div class="level">Intermediate Package</div>
+                <h2>$29/month</h2>
+                <ol>
+                  <li>All beginner content</li>
+                  <li>Chord progressions</li>
+                  <li>Music theory</li>
+                  <li>Bi-weekly Q&A sessions</li>
+                </ol>
+                <button class="btn">Select</button>
+            </div>
+
+            <div class="product" id="advanced">
+                <div class="level">Advanced Package</div>
+                <h2>$49/month</h2>
+                <ol>
+                  <li>All intermediate content</li>
+                  <li>Advanced techniques</li>
+                  <li>Performance preparation</li>
+                  <li>Weekly live masterclasses</li>
+                </ol>
+                <button class="btn">Select</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <span>Copyright 2025, Piano Mastery</span>
+    </footer>
+</body>
+</html>
