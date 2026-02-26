@@ -1,241 +1,170 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-body{
-display: flex;
-font-family: Arial, Helvetica, sans-serif;
-background-color:rgb(44, 22, 44);
-color: white;
-height: 100vh;
-
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background: #2c162c;
+    color: white;
+    min-height: 100vh;
 }
-       
-    
-#navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 25%;
-  padding-bottom:50px;
+
+/* Navigation */
+#navbar {
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    background: #2c162c;
+    border-right: 3px solid white;
 }
 
 #navbar header {
-    display: flex;
-    border-right: 15px solid white;
-    padding: 15px 5px;
-    font-size: 21px;
+    padding: 20px 15px;
     text-align: center;
-    
-  }
-
-.scroll-container{
-  overflow-y: scroll;
-  height: 100%;
+    border-bottom: 2px solid white;
 }
 
-.nav-link{
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  padding: 15px 0;
-  color: rgb(230, 145, 145);
-  border-top: thin solid #777;
-  font-size:25px;
+#navbar header h1 {
+    font-size: 1.5rem;
+    word-break: break-word;
 }
 
-.nav-link:hover{
-  background-color:rgb(230, 145, 145);
-  color:rgb(236, 213, 236);
-  font-weight: 800;
-  }
-
-.main-section{
-  padding-left: 27%;
-  margin: 20px auto;
-  overflow: hidden;
-  flex-grow: 1;
-  padding-bottom: 1.5rem;
-  }
-
-.main-section header{
-  font-size: 28px;
-  text-align: left;
-  padding: 15px 10px 15px 10px;
-  color: #777;
-  }
-
-.main-section p{
-  padding: 12px 20px;
-  font-size: 21px;
-}
-        
-.example{
-  font-style: italic;
-  padding: 20px  20px ;
-  font-size: 20px;
-  text-decoration: underline;
-
-  }
-
-.main-section code {
-  display: block;
-  max-width: 100%;
-  font-size: 20px;
-  white-space: pre-wrap; 
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  
-  font-family: 'Courier New', Courier, monospace;
-  border-left: 5px solid white; 
-  background-color: rgb(95, 64, 95);
-  margin: 20px 10px;
-  padding: 15px;
-  border-radius: 2%;
-          
+.scroll-container {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
 }
 
-
-.main-section .comment{
-  font-style: italic;
-  font-weight: 900;
-  font-size: 20px;
-  color: #777;
-  
- }
-
-.main-section .bold{
-  font-weight: 600;
-}
-
-.main-section .italics{
-  font-style: italic;
-}
-
-.main-section ul{
-  padding-left: 55px;
-}
-
-.main-section li{
-  padding: 10px 5px;
-  font-size: 19px;
-}
-
-.table_container{
-  width: 100%;
-  margin: 20px 0;
-  overflow-x: auto;
-  padding: 0 20px
-}
-
-.main-section  table {
-
-border-collapse: collapse;
-margin:0 auto;
-
-}
-
-.main-section th,td{
-  padding: 10px 1px;
-  font-size: 16px;
-}
-
-.main-section td{
-  background-color: rgb(230, 145, 145);
-}
-
-
-.main-section thead th{
-  background-color: #3f3f3f;
-  text-align: center;
-  
-}
-
-.main-section tbody th{
-  background-color: #858585;
-  text-align: center;
-  font-style: italic;
-  
-}
-    
-  .main-section tbody td{
-    text-align: left;
-    padding-left: 8px;
-  }
-
-@media (max-width: 900px) {
-  body {
-   flex-direction: column;
-   height: auto;
-}
-  
-  #navbar {
-    position: relative;
-    width: 100%;
-    overflow: hidden; 
-    border-right: none;
-    }
-    
-  .scroll-container {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto; 
-    max-height: 200px; 
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-  }
-
-  #Introduction{
-    margin-top: -220px;
-  }
-  
 .nav-link {
     display: block;
-    width: 100%;
-    height: auto;
-    border-bottom: thin solid #777;
-    
-    font-size: 22px;
-    padding: 10px 15px;
+    text-align: center;
+    padding: 18px 15px;
+    color: #e69191;
+    border-top: 1px solid #777;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
 
-    
+.nav-link:hover {
+    background: #e69191;
+    color: #ecd5ec;
+}
+
+/* Main Content */
+#main-doc {
+    margin-left: 280px;
+    padding: 20px 30px;
+    width: calc(100% - 280px);
+}
+
 .main-section {
-    padding: 0 20px;
-    width: 100%;
-    overflow: hidden; 
+    max-width: 1200px;
+    margin: 0 auto 40px;
 }
 
-#navbar header {
-    font-size:28px;
-    display: flex;
-    justify-content: center;
-}
- .nav-link{
-    font-size:28px;
-  }
-
-
+.main-section header {
+    font-size: 2rem;
+    color: #777;
+    padding: 20px 10px 15px;
+    border-bottom: 2px solid #777;
+    margin-bottom: 20px;
 }
 
- @media (max-width: 500px) {
-    body{
-    font-size: 20px;
-  }
+.main-section p {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
 
-  .main-section table,
-     thead,
-    tbody,
-     th, td,tr {
+/* Code Blocks */
+.main-section code {
     display: block;
-  }
-  .main-section th {
-    text-align: left;
-  }
- 
+    background: #5f405f;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #e69191;
+    border-radius: 8px;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
 }
 
+.comment {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Tables */
+.table_container {
+    width: 100%;
+    margin: 25px 0;
+    overflow-x: auto;
+}
+
+.main-section table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.main-section th, .main-section td {
+    padding: 12px 15px;
+    border: 1px solid #555;
+}
+
+.main-section thead th { background: #3f3f3f; }
+.main-section tbody th { background: #858585; }
+.main-section tbody td { background: #e69191; color: #333; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    body { flex-direction: column; }
+    
+    #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 3px solid white;
+    }
+    
+    .scroll-container {
+        height: auto;
+        max-height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    
+    .nav-link {
+        width: auto;
+        min-width: 130px;
+        margin: 3px;
+        border: 1px solid #777;
+        border-radius: 5px;
+        padding: 12px;
+    }
+    
+    #main-doc {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .scroll-container {
+        flex-direction: column;
+    }
+    
+    .nav-link {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .main-section table { min-width: 500px; }
+}

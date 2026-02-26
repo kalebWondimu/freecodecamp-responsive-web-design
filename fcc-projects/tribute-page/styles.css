@@ -1,279 +1,407 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    box-sizing: borsder-box;
-  }
-  
-  body{
-    overflow-x:hidden;
-    background-color:rgb(233, 224, 177);
+    box-sizing: border-box; /* Fixed typo: borsder-box → border-box */
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(233, 224, 177);
     font-family: Arial, Helvetica, sans-serif;
-  }
-         
-  .header{
+    line-height: 1.6;
+}
+
+/* Header improvements */
+.header {
     background-color: rgb(225, 236, 240);
     padding: 20px;
     margin: 15px 10px;
-   border-radius:12px;
-  }
-          
-         
-  .header h1{
-    text-transform:uppercase;
-    padding: 20px 0 0 200px;
-    font-size: 3.5rem;
-    
-  }
-  
-  .header h2{
-    font-size:2.7rem ;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.header h1 {
+    text-transform: uppercase;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
     font-weight: 100;
-    padding: 5px 200px;
-  }
-  
-  .flag{
-    margin-top: -160px;
-    float: right;
-    padding: 10px 4px;
+}
+
+.flag {
+    max-width: 100%;
+    height: auto;
     border-radius: 15px;
-  }
-  
-   #img-div{
-     margin:  10px auto;
-     padding: 30px; 
-          
-  }
-  
-   #image{
-      display: block;
-      max-width:100%;
-      height:auto;
-      margin: 0 auto;
-  }
-  
-  figcaption{
-       display: block;
-       font-style: italic;
-       font-size: 0.9rem;
-       text-align: center;
-  }
-  
-  
-  .timeline {
-      position: relative;
-      margin-left: 30px;
-      padding-left:20px;
-      border-left: 3px solid black;  
-  }
-  
-  .timeline-container {
-        position: relative;
-        margin-bottom: 30px;
-  }
-  
-  .timeline-dot {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: black; 
-      border-radius: 50%;
-      left: -32px; 
-      top: 3px;
-  }
-       
-      
-  .timeline-content h3 {
+    margin: 10px;
+}
+
+/* Image section */
+#img-div {
+    margin: 10px auto;
+    padding: 20px;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+/* Timeline improvements */
+#tribute-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.timeline {
+    flex: 2;
+    min-width: 300px;
+    position: relative;
+    margin-left: 20px;
+    padding-left: 25px;
+    border-left: 3px solid black;
+}
+
+.timeline-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    left: -36px;
+    top: 3px;
+}
+
+.timeline-content h3 {
     margin: 0;
     font-size: 1.2em;
     color: #333;
-  }
-  
-  .timeline-content p {
-      margin: 5px 0 0;
-      width: 70ch;
-      color: #868686;
-  }
-  
-  .achivements{
-      display: inline;
-      position: relative;
-      float:right;
-      top: -600px;
-      right: 20px;
-  }
-     
-  .achivements h4{
-      position: relative;
-      padding: 10px;
-  }
-  
-  .gold{color: gold; font-size: 1.3em;}
-  
-  .full-biography{
-   background-color: rgb(225, 236, 240);
-   padding: 20px;
-   margin: 1em 1.8em;
-  }
-  .full-biography summary {
-      font-weight: bold;
-      cursor: pointer;
-     
-  }
-  
-  .full-biography details{
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-  
-      color:rgb(15, 186, 248);
-  }
-  
-  .full-biography h3{
-      font-size: 1.3rem;
-       padding: 20px;
-  }
-      
-  .full-biography p{
-       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        margin-left: 20px;
-       width: 100%;
-  }
-  
-  .full-biography p{
-          padding: 5px;
-      }
-  
-  
-  #tribute-link:hover{
-    color:balck;
-    background-color:white;
-   }
-  
-      
-  .quote {
+}
+
+.timeline-content p {
+    margin: 5px 0 0;
+    max-width: 65ch; /* Using max-width instead of fixed width */
+    color: #868686;
+}
+
+/* Achievements section */
+.achivements {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    align-self: flex-start;
+}
+
+.achivements h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 20px;
+}
+
+.achivements h4 {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.gold {
+    color: gold;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Full biography */
+.full-biography {
+    background-color: rgb(225, 236, 240);
+    padding: 20px;
+    margin: 1em 20px;
+    border-radius: 12px;
+}
+
+.full-biography summary {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+.full-biography details {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.full-biography details[open] summary {
+    margin-bottom: 20px;
+    background: #3498db;
+    color: white;
+}
+
+.full-biography h3 {
+    font-size: 1.3rem;
+    padding: 20px 0 10px;
+    color: #2c3e50;
+}
+
+.full-biography p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+#tribute-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#tribute-link:hover {
+    color: white;
+    background-color: #3498db;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Quotes section */
+.quotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.quote {
     background-color: white;
     color: rgb(165, 116, 66);
     border-left: 6px solid #0082ec;
-    padding: 12px 15px;
-    margin: 15px 20px;
+    padding: 20px 20px 20px 40px;
     border-radius: 0 8px 8px 0;
     position: relative;
-              
-   }
-   
-   .quote::before {
-     content: "“";
-     line-height:1;
-     font-size: 80px;
-     color:#e0e0e0; 
-     position: absolute;
-     left: 6px;
-     top: 6px;
-             
-  }
-  
-   .quote-text {
-      font-size: 18px;
-      line-height: 1.5;
-      width: 100%;
-      margin-left: 20px;
-      padding-top: 10px;
-   }
-  .quote-author {
-      font-weight: bold;
-      color: #0088cc;
-      text-align: right;
-      font-size: 16px;
-  }
-  .quote-author::before {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote::before {
+    content: "“";
+    font-size: 80px;
+    color: #e0e0e0;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-family: serif;
+}
+
+.quote-text {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.quote-author {
+    font-weight: bold;
+    color: #0088cc;
+    text-align: right;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.quote-author::before {
     content: "— ";
-  }
+}
 
-
-
+/* Responsive breakpoints */
 @media (max-width: 950px) {
     .header {
+        flex-direction: column;
         text-align: center;
-      
-    }
-
-    .header h1 {
-        padding: 20px 0 0 20px;
-        font-size: 3.5rem;
-        text-align: left;
     }
     
-    .header h2 {
-        font-size: 2.7rem;
-        padding: 20px 0 0 20px;
-        text-align: left;
-    }
-    
-    .flag{
-        
-        width: 260px;
-    }
-    
-    .timeline-content p {
+    .header-content {
         width: 100%;
     }
     
+    .header h1,
+    .header h2 {
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .flag {
+        margin: 20px auto 0;
+    }
+    
+    .timeline {
+        margin-left: 15px;
+        padding-left: 20px;
+    }
+    
+    .timeline-dot {
+        left: -31px;
+    }
+}
+
+@media (max-width: 770px) {
+    #tribute-info {
+        flex-direction: column;
+    }
+    
+    .timeline {
+        margin-left: 10px;
+        padding-left: 15px;
+    }
+    
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+        left: -26px;
+    }
+    
     .achivements {
-        float: none;
-        position: static;
-        margin: 20px auto;
+        width: 100%;
         text-align: center;
     }
     
     .full-biography {
-        margin: 1em 0.7em;
+        margin: 1em 10px;
+        padding: 15px;
     }
     
+    .quotes {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 570px) {
     .header h1 {
-        padding: 20px 0px 0 4px;
-        font-size:  2.5rem;
-        font-weight: 700;
-    }
-    
-    
-    .header h2 {
-        font-size: 2rem;
-        padding: 20px 0px 0 4px;
-    }
-
-    .timeline-dot {
-       margin-left: 11px;
-    }
-
-    .flag{
-        width: 200px;
-        height: 130px;
-        margin-right:-5px;
-        margin-top: -135px;
-    }
-    
-    
-    .timeline {
-        margin-left: 15px;
-        padding-left: 10px;
-    }
-}
-
-@media (max-width:570px) {
-
-    .header h1{
-        font-size: 2rem;
-    }
-
-    .header h2{
         font-size: 1.8rem;
     }
-    .flag{
-        position: static;
-        margin-left: 100px;
-        margin-top: -130px;
-       width: 130px;
+    
+    .header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .timeline {
+        margin-left: 5px;
+        padding-left: 15px;
+    }
+    
+    .timeline-dot {
+        width: 14px;
+        height: 14px;
+        left: -22px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+    
+    .full-biography summary {
+        font-size: 1rem;
+    }
+    
+    .full-biography h3 {
+        font-size: 1.1rem;
+    }
+    
+    .quote {
+        padding: 15px 15px 15px 35px;
+    }
+    
+    .quote::before {
+        font-size: 60px;
+        left: 5px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .header {
+        padding: 15px;
+    }
+    
+    .timeline-dot {
+        width: 12px;
+        height: 12px;
+        left: -19px;
+    }
+    
+    .quote {
+        padding: 12px 12px 12px 30px;
+    }
+    
+    .quote::before {
+        font-size: 50px;
+    }
+}
+
+/* Landscape mode */
+@media (orientation: landscape) and (max-height: 600px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .timeline-container {
+        margin-bottom: 20px;
+    }
+    
+    .quote {
+        min-height: 120px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .header {
+        background: none;
+        border: 1px solid #ccc;
+    }
+    
+    .flag {
+        max-width: 200px;
+    }
+    
+    .quote {
+        break-inside: avoid;
+        border: 1px solid #ccc;
     }
 }
